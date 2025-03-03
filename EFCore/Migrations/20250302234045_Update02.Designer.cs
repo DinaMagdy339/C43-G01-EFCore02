@@ -4,6 +4,7 @@ using EFCore.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFCore.Migrations
 {
     [DbContext(typeof(ITIDbContext))]
-    partial class ITIDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250302234045_Update02")]
+    partial class Update02
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -199,23 +202,6 @@ namespace EFCore.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Topics");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "C#"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Java"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Python"
-                        });
                 });
 
             modelBuilder.Entity("EFCore.Models.Course", b =>

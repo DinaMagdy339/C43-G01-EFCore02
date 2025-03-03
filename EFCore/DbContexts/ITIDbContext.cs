@@ -64,7 +64,16 @@ namespace EFCore.DbContexts
                 .WithOne(d => d.Department)
                 .HasForeignKey(s => s.Dept_ID);
 
-           
+            modelBuilder.Entity<Topic>().HasData
+            (
+                new Topic { Id = 1, Name = "C#" },
+                new Topic { Id = 2, Name = "Java" },
+                new Topic { Id = 3, Name = "Python" }
+
+            );
+
         }
+
+        
     }
 }

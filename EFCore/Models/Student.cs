@@ -15,6 +15,6 @@ namespace EFCore.Models
         public int Age { get; set; }
         public int Dept_Id { get; set; }
        public Department Department { get; set; }
-       public ICollection<Stud_Course> Courses { get; set; } = new HashSet<Stud_Course>();
+       public ICollection<Stud_Course>? Courses { get; set; } = new HashSet<Stud_Course>();
     }
 }
